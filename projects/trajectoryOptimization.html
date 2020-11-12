@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Block Pushing Robot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo"><span class="title">Brian Lui</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../resume.html">Resume</a></li>
+							<li><a href="../projects/furutaPendulum/index.html">Furuta Pendulum</a></li>
+							<li><a href="../projects/trajectoryOptimization.html">Trajectory Optimization</a></li>
+							<li><a href="../projects/carbonFiberFeet.html">Carbon Fiber Feet</a></li>
+							<li><a href="../projects/blockPushingRobot.html">Block Pushing Robot</a></li>
+							<li><a href="../projects/waterPump.html">Water Pump</a></li>
+							<li><a href="../projects/standingDesk.html">Standing Desk</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Trajectory Optimzation</h1>
+							<div class="box alt">
+									<div class="row uniform">
+										<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/fbd.png" alt="" /></span></div>
+										<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/initial.png" alt="" /></span></div>
+									</div>
+							</div>
+
+							<p>In Applied Dynamics, I explored some more advanced topics in dynamics in detail. The topic of interest was trajectory optimization, a way to design 
+								a trajectory that minimizes or maximizes a set of constraints. It is useful in solving difficult dynamics problems, such as simulating bipedal locomotion. 
+								To learn about this technique and to understand the pros/cons of the different collocation methods, I focused on a particular question, and solved it using 
+								MATLAB's fmincon, a built in nonlinear optimization program.</p>
+
+							<p>The problem that I decided to focus in detail on was an extension of a phenomenon noticed when a particle was subjected to a central force that wasn't
+								F=-kr (eg. Hooke's law) or F=-kr<sup>2</sup> (eg. gravity). For such situations, the dynamics of a particle can be simulated using MATLAB's ode45 for a given timestep, 
+								and interesting behavior can be quickly noted. Although circular, periodic orbits are possible, there are also many noncircular quasiperiodic orbits. 
+								That begs the questions: is it possible to get noncircular and periodic orbits, and how many periodic orbits exist for a particle subjected to a particular central force?</p> 
+								
+							<p>To get solutions, single shooting was used because it was able to find solutions in the shortest amount of time. Although you can get very close to certain solutions
+								by blinding guessing initial conditions, it is difficult to find the exact initial conditions that results in periodic orbits instead of quasiperiodic ones. Single shooting
+								is also used because if the initial guess for the solution is close to your desired one, it tended to be the quickest at finding solutions as compared to multiple shooting or collocation. 
+								In setting up the nonlinear optimizer, no cost function was used, and the desired periodicity and dynamics of the problem were coded as constraints in fmincon. 
+								A cost function wasn't used in this situation because it tended to push the solution towards an undesired one, such as a straight line or circular orbit. </p>
+							
+							<p>Below are some solutions of the problem. Some of the solutions were harder to find, such as those that more closely resembled a circle.
+								To find such solutions, multiple iterations of single shooting was used, with increasing tolerance on ode45 and fmincon.
+								When finding solutions to the central force F=-kr<sup>-1/2</sup>, it is also interesting to note that there are no solutions were 2, 3, 4, 6, 10, and 14 lobes, because of the possible
+								angles the particle will travel between lobes of the solution. </p>
+
+							<div class="box alt">
+								<div class="row uniform">
+									<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/5_noTitle.png" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/9_noTitle.png" alt="" /></span></div>
+								</div>
+							</div>
+							<div class="box alt">
+								<div class="row uniform">
+									<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/13_2_noTitle.png" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="../images/trajectoryOptimization/19_3_noTitle.png" alt="" /></span></div>
+								</div>
+							</div>
+
+							<p>If you would like to read more in detail, feel free to look at either the <a href="../files/appliedDynamics/Applied_Dynamics_Paper.pdf">paper</a>
+								or <a href="../files/appliedDynamics/Applied_Dynamics_Presentation.pdf">presentation</a> on the topic. </p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.github.com/luibrian" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:bl569@cornell.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Brian Lui. All rights reserved</li>
+								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
