@@ -9,8 +9,8 @@
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -21,9 +21,9 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-								</a>
+							<a href="index.html" class="logo">
+								<span class="title">Brian Lui</span>
+							</a>
 
 							<!-- Nav -->
 								<nav>
@@ -37,26 +37,35 @@
 
 				<!-- Menu -->
 				<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="projects/Resume.html">Resume</a></li>
-							<li><a href="projects/selfBalancingPendulum.html">Self Balancing Pendulum</a></li>
-							<li><a href="projects/trajectoryOptimization.html">Trajectory Optimization</a></li>
-							<li><a href="projects/carbonFiberFeet.html">Carbon Fiber Feet</a></li>
-							<li><a href="projects/arduinoRobot.html">Arduino Robot</a></li>
-							<li><a href="projects/waterPump.html">Water Pump</a></li>
-						</ul>
-					</nav>
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="../projects/furutaPendulum.html">Furuta Pendulum</a></li>
+						<li><a href="../projects/autonomousMobileRobot.html">Autonomous Mobile Robot</a></li>
+						<li><a href="../projects/trajectoryOptimization.html">Trajectory Optimization</a></li>
+						<li><a href="../projects/carbonFiberFeet.html">Carbon Fiber Feet</a></li>
+						<li><a href="../projects/blockPushingRobot.html">Block Pushing Robot</a></li>
+						<li><a href="../projects/waterPump.html">Water Pump</a></li>
+					</ul>
+				</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1>Furuta Pendulum</h1>
+							
+
+							<p><span class="image left"><img src="../images/furutaPendulum/pendulumAssembly.png" alt="" /></span> 
+							In Embedded Operating Systems (ECE5725), I learned about designing microcontroller based systems using embedded Linux. For the final project, I designed and built a 
+							self balancing Furuta pendulum, then controlled it using a Raspberry Pi 3. The Furuta pendulum is a variation of the pendulum on a cart, but 
+							instead of being attached to a moving cart constrained to move linearly in only one dimension, the Furuta pendulum’s “cart” is a rotary object.</p>
+
+							<p>I derived the dynamics of the system using symbolic algebra in MATLAB, and designed a controller around it using sisotool. The pendulum itself was mostly machined out of metal,
+							and the stand was laser cut out of wood and acrylic. Because the components of the design was relatively simple, system identification was done by finding the mass and moment of inertia
+							of the various pieces. The electronic components in the system are the Raspberry Pi, a Wantai stepper motor, a stepper motor driver, and Adafruit 9 DOF IMU (BNO055).</p>
+
+							<p>If you would like to read more in detail, feel free to look at this <a href="../projects/furutaPendulum/index.html">page</a> for more detail on the process, challenges and areas of improvements.</p>	
 						</div>
 					</div>
 
@@ -67,7 +76,6 @@
 								<h2>Follow</h2>
 								<ul class="icons">
 									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">LinkedIn</span></a></li> <!--I need to add the LinkedIn logo-->
 									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
@@ -81,11 +89,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

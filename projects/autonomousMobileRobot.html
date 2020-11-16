@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Water Pump</title>
+		<title>Block Pushing Robot</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -52,25 +52,38 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Water Pump</h1>
+							<h1>Autonomous Mobile Robot</h1>
+							<div class="box alt">
+								<div class="row uniform">
+									<div class="col-6"><span class="image fit"><img src="../images/autonomousMobileRobot/rrt.png" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="../images/autonomousMobileRobot/birrt.png" alt="" /></span></div>
+								</div>
+							</div>
 							
-							<center><iframe width="560" height="315" src="https://www.youtube.com/embed/yBJRVd4w4II" frameborder="0" allow="accelerometer; 
-								autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+							<p>In MAE5180, I learned about the challenges and techniques used for creating autonomously mobile robots.
+							Topics in the class included sensing, localization, mapping, path planning, motion planning, obstacle and collision avoidance, and multi-robot control. 
+							To understand the algorithms that are used to handle these problems, algorithms were first implemented in a simulated environment, then on a iRobot Create.
+							The localization algorithms implemented were an extended Kalman Filter (EKF) and a particle filter. 
+							The path planning algorithms implemented were potential fields, probablistic roadmaps (PRM), rapidly-exploring random trees (RRT), and bidirectional rapidly-exploring random trees (BIRRT).
+							</p>
+
+							<p>The physical robot itself was equip with several sensors. It had a bump sensor to detect frontal collisions and a Realsense camera to detect obstacle depth. 
+							The camera was also able to detect several beacons placed throughout the environment that helped the robot localize itself.
+							I gained experience dealing with some of the challenges in Working with a physical robot, such as sensor latency and sensor fusion.
+							</p>
 							
-							<p>MAE2250 is Cornell's mechanical synthesis class. The class gives hands on experience for product design, rapid prototyping, 
-								manufacturing, and assembly. In the class, I learned how to use CAD, specifically Autodesk Fusion 360, machine metal
-								through using a mill and lathe, and rapid prototype through 3D printing and laser cutting. 
-								In groups of 6, the final project in the class was to design and machine a water pump. 
-								Our water pump was a double-acting, double-piston pump, and was able to pump 4.25 L/min. 
+							<p>The final project for the class put many of these concepts together: the robot needed to handle localization, mapping, and navigation to several checkpoints. The robotFoot
+								was placed into one of the checkpoint in a random orientation and needed to navigate to the other checkpoints in the given map as quickly as possible. There were also 
+								several missing walls in the given map that the robot needed to detect. Specifically for this project, I used an EKF to deal with 
+								localization, a RRT to generate waypoints, and primarily the depth sensor to help the robot detect walls and confirm it's true position as it traveled. 
 							</p>
 
 							<div class="box alt">
-									<div class="row uniform">
-										<div class="col-6"><span class="image fit"><img src="../images/waterPump/waterPumpCAD.png" alt="" /></span></div>
-										<div class="col-6"><span class="image fit"><img src="../images/waterPump/actualPump.jpg" alt="" /></span></div>
-									</div>
+								<div class="row uniform">
+									<div class="col-6"><span class="image fit"><img src="../images/autonomousMobileRobot/potField.png" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="../images/autonomousMobileRobot/flocking.png" alt="" /></span></div>
+								</div>
 							</div>
-							<p></p>
 						</div>
 					</div>
 
